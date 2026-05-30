@@ -1,0 +1,94 @@
+[2026-05-25 20:12:56] [INFO    ] Log file: C:\Users\HP\Desktop\final year project\galamsey-sentinel\ai-engine\logs\train_20260525_201256.log
+[2026-05-25 20:12:56] [INFO    ] =================================================================
+[2026-05-25 20:12:56] [INFO    ] GALAMSEY SENTINEL -- PHASE 5: CNN TRAINING
+[2026-05-25 20:12:56] [INFO    ] =================================================================
+[2026-05-25 20:12:56] [INFO    ] Patches dir  : C:\Users\HP\Desktop\final year project\galamsey-sentinel\pipeline\extraction\patches
+[2026-05-25 20:12:56] [INFO    ] Epochs       : 5
+[2026-05-25 20:12:56] [INFO    ] Batch size   : 8
+[2026-05-25 20:12:56] [INFO    ] Learning rate: 0.001
+[2026-05-25 20:12:56] [INFO    ] Val split    : 0.2
+[2026-05-25 20:12:56] [INFO    ] Seed         : 42
+[2026-05-25 20:12:56] [INFO    ] Device       : CPU (no CUDA GPU detected)
+[2026-05-25 20:12:56] [INFO    ] Loading GeoTIFF dataset from: C:\Users\HP\Desktop\final year project\galamsey-sentinel\pipeline\extraction\patches
+[2026-05-25 20:12:56] [INFO    ] Found 2 .tif file(s).
+[2026-05-25 20:12:56] [ERROR   ] ImageFolder error: Found no valid file for the classes class_2_water. 
+[2026-05-25 20:12:56] [WARNING ] Falling back to synthetic data.
+[2026-05-25 20:12:56] [INFO    ] Dataset type : SYNTHETIC
+[2026-05-25 20:12:56] [INFO    ] Total samples: 20
+[2026-05-25 20:12:56] [INFO    ] Classes      : ['class_0', 'class_1']
+[2026-05-25 20:12:56] [INFO    ] Dataset split: 16 train / 4 val (seed=42)
+[2026-05-25 20:12:56] [INFO    ] Train batches: 2
+[2026-05-25 20:12:56] [INFO    ] Val batches  : 1
+[2026-05-25 20:12:56] [INFO    ] -----------------------------------------------------------------
+[2026-05-25 20:12:56] [INFO    ] MODEL: GalamseyNet
+[2026-05-25 20:12:56] [INFO    ] -----------------------------------------------------------------
+[2026-05-25 20:12:56] [INFO    ]   Input bands  : 8
+[2026-05-25 20:12:56] [INFO    ]   Num classes  : 2
+[2026-05-25 20:12:56] [INFO    ]   Parameters   : 619,970
+[2026-05-25 20:12:56] [INFO    ] Loss         : CrossEntropyLoss
+[2026-05-25 20:12:56] [INFO    ] Optimiser    : Adam (lr=0.001, weight_decay=1e-4)
+[2026-05-25 20:12:56] [INFO    ] LR scheduler : ReduceLROnPlateau (patience=2, factor=0.5)
+[2026-05-25 20:12:56] [INFO    ] -----------------------------------------------------------------
+[2026-05-25 20:12:56] [INFO    ] 
+-- Epoch 1/5 ---------------------------------------------
+[2026-05-25 20:12:56] [DEBUG   ]   [train] Batch 1/2 | Loss: 0.7215 | Correct: 4/8
+[2026-05-25 20:12:57] [DEBUG   ]   [train] Batch 2/2 | Loss: 0.6206 | Correct: 5/8
+[2026-05-25 20:12:57] [INFO    ]   TRAIN | Loss: 0.6711 | Accuracy: 56.2%
+[2026-05-25 20:12:57] [DEBUG   ]   [val] Batch 1/1 | Loss: 0.7005 | Correct: 2/4
+[2026-05-25 20:12:57] [INFO    ]   VAL   | Loss: 0.7005 | Accuracy: 50.0%
+[2026-05-25 20:12:57] [INFO    ]   New best val accuracy: 50.0%
+[2026-05-25 20:12:57] [INFO    ]   LR: 1.00e-03 | Epoch time: 0.8s
+[2026-05-25 20:12:57] [INFO    ] 
+-- Epoch 2/5 ---------------------------------------------
+[2026-05-25 20:12:57] [DEBUG   ]   [train] Batch 1/2 | Loss: 0.6469 | Correct: 6/8
+[2026-05-25 20:12:57] [DEBUG   ]   [train] Batch 2/2 | Loss: 0.9345 | Correct: 4/8
+[2026-05-25 20:12:57] [INFO    ]   TRAIN | Loss: 0.7907 | Accuracy: 62.5%
+[2026-05-25 20:12:57] [DEBUG   ]   [val] Batch 1/1 | Loss: 0.7045 | Correct: 2/4
+[2026-05-25 20:12:57] [INFO    ]   VAL   | Loss: 0.7045 | Accuracy: 50.0%
+[2026-05-25 20:12:57] [INFO    ]   LR: 1.00e-03 | Epoch time: 0.7s
+[2026-05-25 20:12:57] [INFO    ] 
+-- Epoch 3/5 ---------------------------------------------
+[2026-05-25 20:12:58] [DEBUG   ]   [train] Batch 1/2 | Loss: 1.9100 | Correct: 4/8
+[2026-05-25 20:12:58] [DEBUG   ]   [train] Batch 2/2 | Loss: 0.4372 | Correct: 6/8
+[2026-05-25 20:12:58] [INFO    ]   TRAIN | Loss: 1.1736 | Accuracy: 62.5%
+[2026-05-25 20:12:58] [DEBUG   ]   [val] Batch 1/1 | Loss: 0.7071 | Correct: 2/4
+[2026-05-25 20:12:58] [INFO    ]   VAL   | Loss: 0.7071 | Accuracy: 50.0%
+[2026-05-25 20:12:58] [INFO    ]   LR: 1.00e-03 | Epoch time: 0.7s
+[2026-05-25 20:12:58] [INFO    ] 
+-- Epoch 4/5 ---------------------------------------------
+[2026-05-25 20:12:58] [DEBUG   ]   [train] Batch 1/2 | Loss: 1.0855 | Correct: 2/8
+[2026-05-25 20:12:59] [DEBUG   ]   [train] Batch 2/2 | Loss: 1.0909 | Correct: 5/8
+[2026-05-25 20:12:59] [INFO    ]   TRAIN | Loss: 1.0882 | Accuracy: 43.8%
+[2026-05-25 20:12:59] [DEBUG   ]   [val] Batch 1/1 | Loss: 0.7243 | Correct: 2/4
+[2026-05-25 20:12:59] [INFO    ]   VAL   | Loss: 0.7243 | Accuracy: 50.0%
+[2026-05-25 20:12:59] [INFO    ]   LR: 5.00e-04 | Epoch time: 0.7s
+[2026-05-25 20:12:59] [INFO    ] 
+-- Epoch 5/5 ---------------------------------------------
+[2026-05-25 20:12:59] [DEBUG   ]   [train] Batch 1/2 | Loss: 0.9859 | Correct: 4/8
+[2026-05-25 20:12:59] [DEBUG   ]   [train] Batch 2/2 | Loss: 0.8500 | Correct: 5/8
+[2026-05-25 20:12:59] [INFO    ]   TRAIN | Loss: 0.9179 | Accuracy: 56.2%
+[2026-05-25 20:13:00] [DEBUG   ]   [val] Batch 1/1 | Loss: 0.7219 | Correct: 2/4
+[2026-05-25 20:13:00] [INFO    ]   VAL   | Loss: 0.7219 | Accuracy: 50.0%
+[2026-05-25 20:13:00] [INFO    ]   LR: 5.00e-04 | Epoch time: 0.7s
+[2026-05-25 20:13:00] [INFO    ] 
+Training complete in 3.5s
+[2026-05-25 20:13:00] [INFO    ] =================================================================
+[2026-05-25 20:13:00] [INFO    ] TRAINING SUMMARY
+[2026-05-25 20:13:00] [INFO    ] =================================================================
+[2026-05-25 20:13:00] [INFO    ]   Model saved     : C:\Users\HP\Desktop\final year project\galamsey-sentinel\ai-engine\models\galamsey_model.pth
+[2026-05-25 20:13:00] [INFO    ]   Data type       : SYNTHETIC
+[2026-05-25 20:13:00] [INFO    ]   Total samples   : 20
+[2026-05-25 20:13:00] [INFO    ]   Classes         : ['class_0', 'class_1']
+[2026-05-25 20:13:00] [INFO    ]   Epochs          : 5
+[2026-05-25 20:13:00] [INFO    ]   Final train loss: 0.9179
+[2026-05-25 20:13:00] [INFO    ]   Final train acc : 56.2%
+[2026-05-25 20:13:00] [INFO    ]   Best val acc    : 50.0%
+[2026-05-25 20:13:00] [INFO    ]   Total time      : 3.5s
+[2026-05-25 20:13:00] [INFO    ] -----------------------------------------------------------------
+[2026-05-25 20:13:00] [INFO    ]   To load this model for inference:
+[2026-05-25 20:13:00] [INFO    ]     ckpt  = torch.load(r'C:\Users\HP\Desktop\final year project\galamsey-sentinel\ai-engine\models\galamsey_model.pth')
+[2026-05-25 20:13:00] [INFO    ]     model = GalamseyNet(num_bands=8, num_classes=2)
+[2026-05-25 20:13:00] [INFO    ]     model.load_state_dict(ckpt['model_state_dict'])
+[2026-05-25 20:13:00] [INFO    ]     model.eval()
+[2026-05-25 20:13:00] [INFO    ] =================================================================
+[2026-05-25 20:13:00] [WARNING ] SYNTHETIC DATA MODE: weights are NOT trained on real satellite data. Re-run after populating pipeline/extraction/patches/ with real GeoTIFFs.

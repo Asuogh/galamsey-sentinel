@@ -1,0 +1,56 @@
+[2026-05-25 09:55:09] [INFO    ] Log file: C:\Users\HP\Desktop\final year project\galamsey-sentinel\ai-engine\logs\train_20260525_095509.log
+[2026-05-25 09:55:09] [INFO    ] GALAMSEY SENTINEL — PHASE 5: CNN TRAINING
+[2026-05-25 09:55:09] [INFO    ] Patches dir  : C:\Users\HP\Desktop\final year project\galamsey-sentinel\pipeline\extraction\patches
+[2026-05-25 09:55:09] [INFO    ] Epochs       : 5
+[2026-05-25 09:55:09] [INFO    ] Batch size   : 8
+[2026-05-25 09:55:09] [INFO    ] Learning rate: 0.001
+[2026-05-25 09:55:09] [INFO    ] Val split    : 0.2
+[2026-05-25 09:55:09] [INFO    ] Seed         : 42
+[2026-05-25 09:55:09] [INFO    ] Device       : CPU (no CUDA GPU detected)
+[2026-05-25 09:55:09] [WARNING ] Using SYNTHETIC data (rasterio not installed).
+[2026-05-25 09:55:09] [INFO    ] Dataset type : SYNTHETIC
+[2026-05-25 09:55:09] [INFO    ] Total samples: 20
+[2026-05-25 09:55:09] [INFO    ] Classes      : ['class_0', 'class_1']
+[2026-05-25 09:55:09] [INFO    ] Dataset split: 16 train / 4 val (seed=42)
+[2026-05-25 09:55:09] [INFO    ] Train batches: 2
+[2026-05-25 09:55:09] [INFO    ] Val batches  : 1
+[2026-05-25 09:55:09] [INFO    ] MODEL ARCHITECTURE: GalamseyNet
+[2026-05-25 09:55:09] [INFO    ]   Input bands  : 8
+[2026-05-25 09:55:09] [INFO    ]   Num classes  : 2
+[2026-05-25 09:55:09] [INFO    ]   Parameters   : 619,970
+[2026-05-25 09:55:09] [DEBUG   ] GalamseyNet(
+  (features): Sequential(
+    (0): ConvBlock(
+      (block): Sequential(
+        (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      )
+    )
+    (1): ConvBlock(
+      (block): Sequential(
+        (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      )
+    )
+    (2): ConvBlock(
+      (block): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      )
+    )
+  )
+  (pool): AdaptiveAvgPool2d(output_size=(4, 4))
+  (classifier): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=2048, out_features=256, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.5, inplace=False)
+    (4): Linear(in_features=256, out_features=2, bias=True)
+  )
+)

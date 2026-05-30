@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment & Secrets
+.env
+gee-key.json
+*.pem
+
+# Next.js
+.next/
+out/

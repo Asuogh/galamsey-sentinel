@@ -1,0 +1,66 @@
+{
+  "name": "galamsey-sentinel",
+  "version": "1.0.0",
+  "description": "AI-Driven Satellite Surveillance System for Real-Time Galamsey Detection and Water Turbidity Monitoring",
+  "private": true,
+  "workspaces": [
+    "pipeline",
+    "ai-engine",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,magenta\" \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "dev:all": "concurrently --kill-others --names \"PIPELINE,BACKEND,FRONTEND\" --prefix-colors \"yellow,cyan,magenta\" \"npm run watch --workspace=pipeline\" \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=frontend",
+    "pipeline:run": "node pipeline/scripts/run-pipeline.js",
+    "pipeline:ingest": "node pipeline/ingestion/image-exporter.js",
+    "pipeline:engineer": "node pipeline/preprocessing/feature-engineer.js",
+    "pipeline:extract": "node pipeline/extraction/patch-extractor.js",
+    "pipeline:turbidity": "node pipeline/turbidity/nechad-algorithm.js",
+    "ai:train": "npm run train --workspace=ai-engine",
+    "ai:evaluate": "npm run evaluate --workspace=ai-engine",
+    "ai:predict": "npm run predict --workspace=ai-engine",
+    "backend:start": "npm run start --workspace=backend",
+    "backend:migrate": "npm run migrate --workspace=backend",
+    "backend:seed": "npm run seed --workspace=backend",
+    "frontend:build": "npm run build --workspace=frontend",
+    "lint": "eslint . --ext .js,.jsx --ignore-path .eslintignore",
+    "lint:fix": "eslint . --ext .js,.jsx --ignore-path .eslintignore --fix",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\" --ignore-path .prettierignore",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,md}\" --ignore-path .prettierignore",
+    "test": "npm run test --workspaces --if-present",
+    "clean": "rimraf node_modules **/node_modules"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "globals": "^15.6.0",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "galamsey",
+    "satellite",
+    "AI",
+    "remote-sensing",
+    "Ghana",
+    "environmental-monitoring"
+  ],
+  "author": "Galamsey Sentinel Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

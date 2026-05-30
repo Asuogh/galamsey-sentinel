@@ -1,0 +1,18 @@
+{
+  "name": "pipeline",
+  "version": "1.0.0",
+  "description": "Data ingestion, preprocessing, and turbidity analysis pipeline for Galamsey Sentinel",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "ingest": "node ingestion/sentinel2-fetcher.js",
+    "watch": "node --watch ingestion/sentinel2-fetcher.js"
+  },
+  "dependencies": {
+    "@google/earthengine": "^0.1.401",
+    "dotenv": "^16.4.5",
+    "jszip": "^3.10.1",
+    "winston": "^3.13.0"
+  }
+}
