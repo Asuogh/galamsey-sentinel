@@ -15,3 +15,7 @@ gee-key.json
 # Next.js
 .next/
 out/
+ 
+ # Data
+pipeline/extraction/patches/
+*.tif

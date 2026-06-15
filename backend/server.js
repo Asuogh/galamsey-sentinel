@@ -3,18 +3,16 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
-
-// Middleware
+ 
 app.use(cors());
-app.use(express.json()); // Allows us to read JSON data
+app.use(express.json()); 
 
-// 1. Health check endpoint (To test if it's awake)
 app.get('/health', (req, res) => {
     console.log('[GET] /health - Checking server status...');
     res.status(200).json({ status: 'API is running beautifully!' });
 });
 
-// 2. Predict endpoint (The mock AI waiter for Phase 6)
+
 app.post('/api/predict', (req, res) => {
     const { lat, lon } = req.body;
     
